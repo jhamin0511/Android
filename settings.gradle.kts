@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android"
 include(":app")
+include(":core:design")
 include(":Asynchronous:AsyncTask")
 include(":Asynchronous:Handler")
 include(":Asynchronous:Thread")
