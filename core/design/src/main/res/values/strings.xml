@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="author">저자</string>
+    <string name="translator">역자</string>
+    <string name="publisher">출판</string>
+</resources>
