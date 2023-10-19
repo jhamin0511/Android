@@ -14,7 +14,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Android"
-include(":app")
 include(":core:design")
 include(":ModelViewController:mvc")
 include(":ModelViewController:model")
