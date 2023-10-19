@@ -7,6 +7,10 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="Item.Book.Price" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
     <style name="Item.Book.Author" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:textColor">@color/material_dynamic_neutral60</item>
         <item name="android:maxLines">2</item>
@@ -29,5 +33,15 @@
         <item name="android:textColor">@android:color/black</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Item.Keyword.Title" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Item.Keyword.Author" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/material_dynamic_neutral60</item>
+        <item name="android:singleLine">true</item>
     </style>
 </resources>

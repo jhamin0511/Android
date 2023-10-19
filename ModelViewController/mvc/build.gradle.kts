@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.github.jhamin0511.android.mvc"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.github.jhamin0511.android.mvc"
@@ -33,9 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":ModelViewController:controller")))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

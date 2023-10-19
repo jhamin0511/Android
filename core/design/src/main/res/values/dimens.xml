@@ -43,7 +43,7 @@
     <!--  선 크기  -->
     <dimen name="stroke.none">0dp</dimen>
     <dimen name="stroke.extra_small">1dp</dimen>
-    <dimen name="stroke.small">2dpo</dimen>
+    <dimen name="stroke.small">2dp</dimen>
     <dimen name="stroke.medium">3dp</dimen>
     <dimen name="stroke.large">4dp</dimen>
     <dimen name="stroke.extra_large">5dp</dimen>

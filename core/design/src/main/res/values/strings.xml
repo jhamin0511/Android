@@ -3,4 +3,5 @@
     <string name="author">저자</string>
     <string name="translator">역자</string>
     <string name="publisher">출판</string>
+    <string name="hint_search">검색어를 입력해 주세요.</string>
 </resources>

@@ -18,7 +18,7 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_title"
         style="@style/Item.Book.Title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space.widget.large"
         app:layout_constrainedWidth="true"
@@ -28,6 +28,16 @@
         tools:text="Kotlin in Action (코틀린 컴파일러 개발자가 직접 알려주는 코틀린 언어 핵심 (Kotlin 1.6 대응 / 자바스크립트 개발 관련 부록 추가))" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_price"
+        style="@style/Item.Book.Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space.widget.large"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="32,400원" />
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_division_author"
         style="@style/Item.Book.Division"
         android:layout_width="wrap_content"
@@ -35,17 +45,20 @@
         android:layout_marginTop="@dimen/space.widget.large"
         android:text="@string/author"
         app:layout_constraintStart_toStartOf="@id/tv_title"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_price" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_author"
         style="@style/Item.Book.Author"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space.widget.small"
+        android:layout_marginEnd="@dimen/space.widget.large"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_division_author"
+        app:layout_constraintEnd_toStartOf="@id/iv_bookmark"
         app:layout_constraintStart_toEndOf="@id/tv_division_author"
-        tools:text="드미트리 제메로프, 스베트라나 이사코바" />
+        tools:text="드미트리 제메로프, 스베트라나" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_division_translator"
@@ -55,14 +68,16 @@
         android:layout_marginTop="@dimen/space.widget.extra_small"
         android:text="@string/translator"
         app:layout_constraintStart_toStartOf="@id/tv_division_author"
-        app:layout_constraintTop_toBottomOf="@id/tv_division_author" />
+        app:layout_constraintTop_toBottomOf="@id/tv_author" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_translator"
         style="@style/Item.Book.Author"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_division_translator"
+        app:layout_constraintEnd_toEndOf="@id/tv_author"
         app:layout_constraintStart_toStartOf="@id/tv_author"
         tools:text="오현석" />
 
@@ -74,14 +89,15 @@
         android:layout_marginTop="@dimen/space.widget.extra_small"
         android:text="@string/publisher"
         app:layout_constraintStart_toStartOf="@id/tv_division_translator"
-        app:layout_constraintTop_toBottomOf="@id/tv_division_translator" />
+        app:layout_constraintTop_toBottomOf="@id/tv_translator" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_publisher"
         style="@style/Item.Book.Publisher"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_division_publisher"
+        app:layout_constraintEnd_toEndOf="@id/tv_translator"
         app:layout_constraintStart_toStartOf="@id/tv_translator"
         tools:text="에이콘출판사" />
 
@@ -101,10 +117,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="iv_book, tv_division_publisher" />
+        app:constraint_referenced_ids="iv_book, tv_division_publisher, iv_bookmark" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_context"
+        android:id="@+id/tv_description"
         style="@style/Item.Book.Content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
