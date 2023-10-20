@@ -12,7 +12,7 @@ class KeywordAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KeywordHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemKeywordBinding.inflate(inflater)
+        val binding = ItemKeywordBinding.inflate(inflater, parent, false)
 
         return KeywordHolder(binding, listener)
     }

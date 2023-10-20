@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Item.Book.Source" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/bg_source</item>
+        <item name="android:paddingStart">@dimen/space.widget.small</item>
+        <item name="android:paddingEnd">@dimen/space.widget.small</item>
+    </style>
+
     <style name="Item.Book.Title" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:maxLines">2</item>

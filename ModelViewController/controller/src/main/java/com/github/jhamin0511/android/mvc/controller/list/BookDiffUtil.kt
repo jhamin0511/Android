@@ -5,7 +5,7 @@ import com.github.jhamin0511android.core.model.Book
 
 class BookDiffUtil : DiffUtil.ItemCallback<Book>() {
     override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
-        return oldItem.isbn == newItem.isbn
+        return oldItem.isbn == newItem.isbn && oldItem.source == newItem.source
     }
 
     override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {

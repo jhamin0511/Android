@@ -9,7 +9,7 @@ import com.github.jhamin0511android.core.model.Book
 class BookAdapter : ListAdapter<Book, BookHolder>(BookDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemBookBinding.inflate(inflater)
+        val binding = ItemBookBinding.inflate(inflater, parent, false)
 
         return BookHolder(binding)
     }

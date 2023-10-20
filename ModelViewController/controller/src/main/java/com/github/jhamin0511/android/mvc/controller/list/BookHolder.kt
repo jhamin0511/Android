@@ -13,6 +13,7 @@ class BookHolder(
         Glide.with(binding.ivBook)
             .load(item.thumbnail)
             .into(binding.ivBook)
+        binding.tvSource.text = item.source
         binding.tvTitle.text = item.title
         binding.tvPrice.text = item.price
         binding.tvAuthor.text = item.author

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
     android:padding="@dimen/space.layout.small">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -16,9 +17,22 @@
         tools:src="@drawable/img_sample" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_source"
+        style="@style/Item.Book.Source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space.widget.small"
+        android:layout_marginBottom="@dimen/space.widget.small"
+        android:background="@drawable/bg_source"
+        app:layout_constraintEnd_toEndOf="@id/iv_book"
+        app:layout_constraintStart_toStartOf="@id/iv_book"
+        app:layout_constraintTop_toBottomOf="@id/iv_book"
+        tools:text="KaKao" />
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_title"
         style="@style/Item.Book.Title"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space.widget.large"
         app:layout_constrainedWidth="true"
@@ -58,7 +72,7 @@
         app:layout_constraintBaseline_toBaselineOf="@id/tv_division_author"
         app:layout_constraintEnd_toStartOf="@id/iv_bookmark"
         app:layout_constraintStart_toEndOf="@id/tv_division_author"
-        tools:text="드미트리 제메로프, 스베트라나" />
+        tools:text="" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_division_translator"
@@ -79,7 +93,7 @@
         app:layout_constraintBaseline_toBaselineOf="@id/tv_division_translator"
         app:layout_constraintEnd_toEndOf="@id/tv_author"
         app:layout_constraintStart_toStartOf="@id/tv_author"
-        tools:text="오현석" />
+        tools:text="" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_division_publisher"
@@ -99,7 +113,7 @@
         app:layout_constraintBaseline_toBaselineOf="@id/tv_division_publisher"
         app:layout_constraintEnd_toEndOf="@id/tv_translator"
         app:layout_constraintStart_toStartOf="@id/tv_translator"
-        tools:text="에이콘출판사" />
+        tools:text="" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_bookmark"
@@ -117,16 +131,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="iv_book, tv_division_publisher, iv_bookmark" />
+        app:constraint_referenced_ids="tv_source, tv_division_publisher, iv_bookmark" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_description"
         style="@style/Item.Book.Content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space.layout.small"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier_content"
         tools:text="코틀린이 안드로이드 공식 언어가 되면서 관심이 커졌다. 이 책은 코틀린 언어를 개발한 젯브레인의 코틀린 컴파일러 개발자들이 직접 쓴 일종의 공식 서적이라 할 수 있다. 코틀린 언어의 가장 큰 특징이라면 실용성을 들 수 있을 것이다. 이 책에서도 실용성을 강조하는 입장에서 쓰였다. \n\n\n\n코틀린 기초를 소개하고, 고차함수, 객체지향, 제네릭스 등의 내용을 설명한다. 그리고 코틀린이 자바 언어를 어떻게 개선했고 기존 자바 프로젝트에서 코틀린을 함께 사용할 때 어떤 부분을 조심해야 할지를 중심으로 코틀린 언어를 설명한다. 후반에는 애노테이션과 리플렉션, DSL에 대해 실제 라이브러리 예제를 다루면서 설계 기법과 구현기법을 자세히 설명한다. 특히 이 주제는 이 책의 백미로, 다른 코틀린 책이나 공식 문서에서는 찾아보기 힘들며 실전에서 크게 도움이 받을 수 있다. \n\n\n\n한국어판 부록에서는 코틀린 버전 1.3.3까지의 변화를 정리한 내용과 코루틴, 코틀린/JS에 대한 간단한 소개를 덧붙였다" />
 </androidx.constraintlayout.widget.ConstraintLayout>

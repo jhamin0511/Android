@@ -2,6 +2,7 @@ package com.github.jhamin0511android.core.model
 
 data class Book(
     val isbn: String,
+    val source: String,
     val thumbnail: String,
     val title: String,
     val author: String,
