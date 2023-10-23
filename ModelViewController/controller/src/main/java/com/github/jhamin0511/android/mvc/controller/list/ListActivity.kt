@@ -3,7 +3,7 @@ package com.github.jhamin0511.android.mvc.controller.list
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import com.github.jhamin0511.android.core.testing.bookTestData
+import com.github.jhamin0511android.core.model.bookTestData
 import com.github.jhamin0511.android.mvc.controller.keyword.KeywordAdapter
 import com.github.jhamin0511.android.mvc.view.databinding.ActivityListBinding
 import com.github.jhamin0511android.core.model.Keyword

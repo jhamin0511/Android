@@ -37,7 +37,6 @@ android {
 
 dependencies {
     implementation(project(mapOf("path" to ":core:model")))
-    implementation(project(mapOf("path" to ":core:testing")))
     implementation(project(mapOf("path" to ":core:util")))
     implementation(project(mapOf("path" to ":ModelViewController:view")))
     implementation(project(mapOf("path" to ":ModelViewController:model")))

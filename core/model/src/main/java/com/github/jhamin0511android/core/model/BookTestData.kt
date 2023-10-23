@@ -1,4 +1,4 @@
-package com.github.jhamin0511.android.core.testing
+package com.github.jhamin0511android.core.model
 
 import com.github.jhamin0511android.core.model.Book
 
