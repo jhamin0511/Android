@@ -1,13 +1,12 @@
 package com.github.jhamin0511.android.async.handler
 
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import com.github.jhamin0511.android.async.handler.databinding.ActivityMainBinding
 import com.github.jhamin0511.android.async.handler.indicate.IndicateHandler
 import com.github.jhamin0511.android.async.handler.indicate.IndicateThread
-import com.github.jhamin0511.android.async.handler.looper.NoneLooperHandler
 import com.github.jhamin0511.android.async.handler.looper.NoneLooperThread
+import com.github.jhamin0511.android.async.handler.monitor.LogHandler
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -51,22 +50,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private lateinit var noneLooperHandler: NoneLooperHandler
+    private lateinit var monitorLogHandler: LogHandler
     private lateinit var noneLooperThread: NoneLooperThread
     private fun initNoneLooperThread() {
-        binding.tvMonitorNoneLooper.movementMethod = ScrollingMovementMethod.getInstance()
-        noneLooperHandler = NoneLooperHandler(binding.tvMonitorNoneLooper)
+        monitorLogHandler = LogHandler(binding.logNoneLooper)
 
         binding.btCreateNoneLooperThread.setOnClickListener {
-            noneLooperThread = NoneLooperThread(noneLooperHandler)
+            noneLooperThread = NoneLooperThread(monitorLogHandler)
             noneLooperThread.start()
         }
+    }
+
+    companion object {
+        private const val NONE_LOOPER_LOG = "NONE_LOOPER_LOG"
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putString(NONE_LOOPER_LOG, binding.logNoneLooper.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        val noneLooperLog = savedInstanceState.getString(NONE_LOOPER_LOG) ?: ""
+        binding.logNoneLooper.text = noneLooperLog
     }
 
     override fun onDestroy() {
         super.onDestroy()
 
-        noneLooperThread.exit()
         looperThread.quit()
         indicateThread.exit()
     }

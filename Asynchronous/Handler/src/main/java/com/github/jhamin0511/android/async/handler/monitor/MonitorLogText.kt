@@ -1,14 +1,14 @@
-package com.github.jhamin0511.android.async.handler.looper
+package com.github.jhamin0511.android.async.handler.monitor
 
-class TextMonitorLogger {
+class MonitorLogText {
 
     fun combineMessage(originalMessage: CharSequence, newMessage: CharSequence): String {
         return buildString {
-            if (originalMessage.isNotEmpty()) {
-                append(originalMessage)
-                appendLine()
-            }
             append(newMessage)
+            if (originalMessage.isNotEmpty()) {
+                appendLine()
+                append(originalMessage)
+            }
         }
     }
 }

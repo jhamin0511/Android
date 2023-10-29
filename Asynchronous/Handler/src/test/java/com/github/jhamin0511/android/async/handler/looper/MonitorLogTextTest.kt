@@ -1,10 +1,11 @@
 package com.github.jhamin0511.android.async.handler.looper
 
+import com.github.jhamin0511.android.async.handler.monitor.MonitorLogText
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
-class TextMonitorLoggerTest {
-    private val logger = TextMonitorLogger()
+class MonitorLogTextTest {
+    private val logText = MonitorLogText()
 
     @Test
     fun combineMessageWithEmptyOriginal() {
@@ -12,7 +13,7 @@ class TextMonitorLoggerTest {
         val original = ""
         val newMessage = "newMessage"
         // When
-        val result = logger.combineMessage(original, newMessage)
+        val result = logText.combineMessage(original, newMessage)
         // Then
         assertThat(result).isEqualTo(newMessage)
     }
@@ -23,9 +24,9 @@ class TextMonitorLoggerTest {
         val original = "original"
         val newMessage = "newMessage"
         // When
-        val result = logger.combineMessage(original, newMessage)
+        val result = logText.combineMessage(original, newMessage)
         // Then
-        val expected = "${original}\n$newMessage"
+        val expected = "${newMessage}\n$original"
         assertThat(result).isEqualTo(expected)
     }
 }
