@@ -12,7 +12,7 @@ class NoneLooperThread(
         try {
             handler = Handler()
         } catch (e: Throwable) {
-            monitorLogHandler.sendException(e.toString())
+            monitorLogHandler.sendLog(e.toString())
         }
     }
 
@@ -20,7 +20,7 @@ class NoneLooperThread(
         try {
             handler.looper.quit()
         } catch (e: Throwable) {
-            monitorLogHandler.sendException(e.toString())
+            monitorLogHandler.sendLog(e.toString())
         }
     }
 }

@@ -24,9 +24,10 @@ class LogHandler(
         }
     }
 
-    fun sendException(log: String) {
-        val message = obtainMessage(LOG)
-        message.obj = log
+    fun sendLog(log: String) {
+        val message = obtainMessage(LOG).apply {
+            obj = log
+        }
         sendMessage(message)
     }
 }
