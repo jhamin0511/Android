@@ -1,11 +1,13 @@
 package com.github.jhamin0511.android.async.handler
 
 import android.os.Bundle
-import android.os.Handler
+import android.text.method.ScrollingMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import com.github.jhamin0511.android.async.handler.databinding.ActivityMainBinding
 import com.github.jhamin0511.android.async.handler.indicate.IndicateHandler
 import com.github.jhamin0511.android.async.handler.indicate.IndicateThread
+import com.github.jhamin0511.android.async.handler.looper.NoneLooperHandler
+import com.github.jhamin0511.android.async.handler.looper.NoneLooperThread
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initNoneLooperThread()
 
         looperThread = LooperThread()
         looperThread.start()
@@ -27,13 +30,6 @@ class MainActivity : AppCompatActivity() {
         indicateThread = IndicateThread(indicateHandler)
         indicateThread.start()
 
-        binding.btCreateHandler.setOnClickListener {
-            Thread {
-                // java.lang.RuntimeException: Can't create handler inside thread
-                // Thread[Thread-3,5,main] that has not called Looper.prepare()
-                val handler = Handler()
-            }.start()
-        }
         var count = 0
         binding.btSendMessage.setOnClickListener {
             looperThread.sendMessage(count++)
@@ -55,9 +51,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private lateinit var noneLooperHandler: NoneLooperHandler
+    private lateinit var noneLooperThread: NoneLooperThread
+    private fun initNoneLooperThread() {
+        binding.tvMonitorNoneLooper.movementMethod = ScrollingMovementMethod.getInstance()
+        noneLooperHandler = NoneLooperHandler(binding.tvMonitorNoneLooper)
+
+        binding.btCreateNoneLooperThread.setOnClickListener {
+            noneLooperThread = NoneLooperThread(noneLooperHandler)
+            noneLooperThread.start()
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
 
+        noneLooperThread.exit()
         looperThread.quit()
         indicateThread.exit()
     }

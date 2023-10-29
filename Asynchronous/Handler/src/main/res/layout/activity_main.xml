@@ -7,15 +7,43 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_create_handler"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_none_looper"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Handler"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_none_looper"
+            style="@style/Example.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NoneLooperThreadHandler"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_monitor_none_looper"
+            style="@style/Example.Monitor"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="bottom"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_none_looper"
+            tools:text="LOG" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_create_none_looper_thread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space.widget.medium"
+            android:text="Create NoneLooperThread"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_monitor_none_looper" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_send_message"
@@ -26,7 +54,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@id/bt_send_message_delayed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_create_handler" />
+        app:layout_constraintTop_toBottomOf="@id/cl_none_looper" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_send_message_delayed"

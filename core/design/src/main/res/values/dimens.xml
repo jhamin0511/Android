@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Elevation Level  -->
+    <dimen name="elevation.level0">-1dp</dimen>
+    <dimen name="elevation.level1">1dp</dimen>
+    <dimen name="elevation.level2">3dp</dimen>
+    <dimen name="elevation.level3">6dp</dimen>
+    <!--  사용자 인터렉션 상태 -->
+    <dimen name="elevation.level4">8dp</dimen>
+    <dimen name="elevation.level5">12dp</dimen>
+
+    <!--  아이콘 크기  -->
+    <dimen name="icon.standard.small">24dp</dimen>
+    <dimen name="icon.standard.large">48dp</dimen>
+    <dimen name="icon.extra_small">4dp</dimen>
+    <dimen name="icon.small">8dp</dimen>
+    <dimen name="icon.medium">16dp</dimen>
+    <dimen name="icon.large">48dp</dimen>
+    <dimen name="icon.extra_large">48dp</dimen>
+
+    <!--  Padding, Margin 크기  -->
+    <dimen name="space.icon.large">18dp</dimen>
+    <dimen name="space.icon.medium">12dp</dimen>
+    <dimen name="space.icon.small">6dp</dimen>
+    <dimen name="space.widget.extra_large">10dp</dimen>
+    <dimen name="space.widget.large">8dp</dimen>
+    <dimen name="space.widget.medium">6dp</dimen>
+    <dimen name="space.widget.small">4dp</dimen>
+    <dimen name="space.widget.extra_small">2dp</dimen>
+    <dimen name="space.layout.large">20dp</dimen>
+    <dimen name="space.layout.medium">15dp</dimen>
+    <dimen name="space.layout.small">10dp</dimen>
+
+    <!--  Radius 크기  -->
+    <dimen name="radius.none">0dp</dimen>
+    <dimen name="radius.extra_small">4dp</dimen>
+    <dimen name="radius.small">8dp</dimen>
+    <dimen name="radius.medium">12dp</dimen>
+    <dimen name="radius.large">16dp</dimen>
+    <dimen name="radius.extra_large">28dp</dimen>
+    <dimen name="radius.full">100dp</dimen>
+
+    <!--  선 크기  -->
+    <dimen name="stroke.none">0dp</dimen>
+    <dimen name="stroke.extra_small">1dp</dimen>
+    <dimen name="stroke.small">2dp</dimen>
+    <dimen name="stroke.medium">3dp</dimen>
+    <dimen name="stroke.large">4dp</dimen>
+    <dimen name="stroke.extra_large">5dp</dimen>
+</resources>

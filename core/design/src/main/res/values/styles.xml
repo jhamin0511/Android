@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Example.Title" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Example.Monitor" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:background">@drawable/bg_example_monitor</item>
+        <item name="android:padding">@dimen/space.widget.large</item>
+        <item name="android:layout_marginTop">@dimen/space.widget.small</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+</resources>
