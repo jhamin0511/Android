@@ -10,6 +10,7 @@ import com.github.jhamin0511.android.async.handler.looper.NoneLooperThread
 import com.github.jhamin0511.android.async.handler.monitor.LogHandler
 import com.github.jhamin0511.android.async.handler.monitor.LogTextView
 import com.github.jhamin0511.android.async.handler.snapshot.SnapshotThread
+import com.github.jhamin0511.android.async.handler.tracking.TrackingThread
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         initLooperThread()
         initIndicate()
         initSnapshot()
+        initTracking()
     }
 
     private lateinit var noneLooperLogHandler: LogHandler
@@ -82,6 +84,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.btSnapshot.setOnClickListener {
             thread.snapshotMessageQueue()
+        }
+    }
+
+    private fun initTracking() {
+        val thread = TrackingThread()
+        thread.start()
+
+        binding.btTracking.setOnClickListener {
+            thread.sendMessage()
         }
     }
 

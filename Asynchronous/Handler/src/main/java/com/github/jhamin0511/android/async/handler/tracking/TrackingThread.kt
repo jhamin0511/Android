@@ -1,4 +1,4 @@
-package com.github.jhamin0511.android.async.handler.snapshot
+package com.github.jhamin0511.android.async.handler.tracking
 
 import android.os.Handler
 import android.os.Looper
@@ -6,13 +6,17 @@ import android.os.Message
 import android.util.Log
 import android.util.LogPrinter
 
-object SnapshotThreadCounter {
+object TrackingThreadCounter {
     var count = 1
 }
 
-class SnapshotThread : Thread(
-    "SnapshotThread #${SnapshotThreadCounter.count++}"
+class TrackingThread : Thread(
+    "TrackingThread #${TrackingThreadCounter.count++}"
 ) {
+    companion object {
+        private val TAG = TrackingThread::class.simpleName
+    }
+
     private lateinit var handler: Handler
 
     override fun run() {
@@ -23,10 +27,11 @@ class SnapshotThread : Thread(
                 println(message)
             }
         }
+        Looper.myLooper()?.setMessageLogging(LogPrinter(Log.DEBUG, TAG))
         Looper.loop()
     }
 
-    fun snapshotMessageQueue() {
+    fun sendMessage() {
         handler.sendEmptyMessageDelayed(1, 2000)
         handler.sendEmptyMessage(2)
         handler.obtainMessage(3, 0, 0, Any()).sendToTarget()
@@ -35,6 +40,5 @@ class SnapshotThread : Thread(
             println("Execute")
         }, 400)
         handler.sendEmptyMessage(5)
-        handler.dump(LogPrinter(Log.DEBUG, "EAT"), "")
     }
 }

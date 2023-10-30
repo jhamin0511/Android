@@ -199,5 +199,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_snapshot" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_tracking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space.widget.extra_large"
+            app:layout_constraintTop_toBottomOf="@id/cl_snapshot">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_tracking"
+                style="@style/Example.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MessageQueue Tracking"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_tracking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.medium"
+                android:text="Start MessageQueue Tracking"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_tracking" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
