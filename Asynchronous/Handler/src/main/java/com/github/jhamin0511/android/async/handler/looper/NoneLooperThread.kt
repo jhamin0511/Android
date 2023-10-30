@@ -3,9 +3,13 @@ package com.github.jhamin0511.android.async.handler.looper
 import android.os.Handler
 import com.github.jhamin0511.android.async.handler.monitor.LogHandler
 
+object NoneLooperThreadCounter {
+    var counter = 1
+}
+
 class NoneLooperThread(
     private val monitorLogHandler: LogHandler
-) : Thread() {
+) : Thread("NoneLooperThread #${NoneLooperThreadCounter.counter++}") {
     private lateinit var handler: Handler
 
     override fun run() {

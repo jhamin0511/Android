@@ -1,161 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_none_looper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".MainActivity">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title_none_looper"
-            style="@style/Example.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NoneLooperThreadHandler"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.github.jhamin0511.android.async.handler.monitor.LogTextView
-            android:id="@+id/log_none_looper"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_none_looper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space.widget.small"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_none_looper"
-            tools:text="LOG" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_create_none_looper_thread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space.widget.medium"
-            android:text="Create NoneLooperThread"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/log_none_looper" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_none_looper"
+                style="@style/Example.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NoneLooperThreadHandler"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_looper"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space.widget.extra_large"
-        app:layout_constraintTop_toBottomOf="@id/cl_none_looper">
+            <com.github.jhamin0511.android.async.handler.monitor.LogTextView
+                android:id="@+id/log_none_looper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.small"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_none_looper"
+                tools:text="LOG" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_title_looper"
-            style="@style/Example.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LooperThreadHandler"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_create_none_looper_thread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.medium"
+                android:text="Create NoneLooperThread"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/log_none_looper" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.github.jhamin0511.android.async.handler.monitor.LogTextView
-            android:id="@+id/log_looper"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_looper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space.widget.small"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_looper"
-            tools:text="LOG" />
+            android:layout_marginTop="@dimen/space.widget.extra_large"
+            app:layout_constraintTop_toBottomOf="@id/cl_none_looper">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space.widget.medium"
-            android:text="Send"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@id/bt_send_delayed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/log_looper" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_looper"
+                style="@style/Example.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LooperThreadHandler"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_send_delayed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SendDelayed"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@id/bt_post"
-            app:layout_constraintStart_toEndOf="@+id/bt_send"
-            app:layout_constraintTop_toTopOf="@id/bt_send" />
+            <com.github.jhamin0511.android.async.handler.monitor.LogTextView
+                android:id="@+id/log_looper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.small"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_looper"
+                tools:text="LOG" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_post"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@id/bt_post_delayed"
-            app:layout_constraintStart_toEndOf="@id/bt_send_delayed"
-            app:layout_constraintTop_toTopOf="@id/bt_send_delayed" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.medium"
+                android:text="Send"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@id/bt_send_delayed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/log_looper" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_post_delayed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PostDelayed"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bt_post"
-            app:layout_constraintTop_toTopOf="@id/bt_post" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_send_delayed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SendDelayed"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@id/bt_post"
+                app:layout_constraintStart_toEndOf="@+id/bt_send"
+                app:layout_constraintTop_toTopOf="@id/bt_send" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_idle"
-            android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@id/bt_post_delayed"
+                app:layout_constraintStart_toEndOf="@id/bt_send_delayed"
+                app:layout_constraintTop_toTopOf="@id/bt_send_delayed" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_post_delayed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PostDelayed"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bt_post"
+                app:layout_constraintTop_toTopOf="@id/bt_post" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_idle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.medium"
+                android:text="IdleHandler"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bt_send" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_indicate"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space.widget.medium"
-            android:text="IdleHandler"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bt_send" />
+            android:layout_marginTop="@dimen/space.widget.extra_large"
+            app:layout_constraintTop_toBottomOf="@id/cl_looper">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_indicate"
+                style="@style/Example.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/pb_indicate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.small"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_indicate"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_indicate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/pb_indicate"
+                app:layout_constraintEnd_toEndOf="@id/pb_indicate"
+                app:layout_constraintStart_toStartOf="@id/pb_indicate"
+                app:layout_constraintTop_toTopOf="@id/pb_indicate"
+                tools:text="50%"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_start_indicate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space.widget.small"
+                android:text="Start Indicate"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_indicate" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_indicate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/cl_looper">
-
-        <ProgressBar
-            android:id="@+id/pb_indicate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_indicate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/pb_indicate"
-            app:layout_constraintEnd_toEndOf="@id/pb_indicate"
-            app:layout_constraintStart_toStartOf="@id/pb_indicate"
-            app:layout_constraintTop_toTopOf="@id/pb_indicate"
-            tools:text="50%"
-            tools:visibility="visible" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_start_indicate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start Indicate"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

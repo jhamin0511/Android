@@ -7,10 +7,13 @@ class IndicateLogicTest {
     private val logic = IndicateLogic()
 
     @Test
-    fun startLogicTest() {
+    fun startLogic() {
+        // Given
+        // When
         logic.startLogic {
             println(it)
             assertThat(it <= 100).isTrue()
         }
+        // Then
     }
 }

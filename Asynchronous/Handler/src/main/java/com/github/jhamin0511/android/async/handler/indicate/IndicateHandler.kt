@@ -7,10 +7,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
-import java.lang.IllegalArgumentException
 
 class IndicateHandler(
-    private val progress: ProgressBar,
+    private val indicate: ProgressBar,
     private val textView: TextView,
     private val start: Button
 ) : Handler(Looper.getMainLooper()) {
@@ -25,19 +24,22 @@ class IndicateHandler(
         when (msg.what) {
             START -> {
                 textView.text = PERCENT_FORMAT.format(0)
-                progress.visibility = View.VISIBLE
+                indicate.progress = 0
+                indicate.visibility = View.VISIBLE
                 textView.visibility = View.VISIBLE
                 start.visibility = View.GONE
             }
 
             FINISH -> {
-                progress.visibility = View.GONE
+                indicate.visibility = View.GONE
                 textView.visibility = View.GONE
                 start.visibility = View.VISIBLE
             }
 
             SEND -> {
-                textView.text = PERCENT_FORMAT.format(msg.arg1)
+                val percent = msg.arg1
+                textView.text = PERCENT_FORMAT.format(percent)
+                indicate.progress = percent
             }
 
             else -> throw IllegalArgumentException("not support!")
