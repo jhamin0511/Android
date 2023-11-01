@@ -1,4 +1,4 @@
-package com.github.jhamin0511.android.async.thread.memory
+package com.github.jhamin0511.android.async.thread
 
 import java.util.concurrent.TimeUnit
 

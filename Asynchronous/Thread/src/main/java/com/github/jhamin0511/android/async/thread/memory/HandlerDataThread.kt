@@ -2,6 +2,7 @@ package com.github.jhamin0511.android.async.thread.memory
 
 import android.os.Handler
 import android.os.Looper
+import com.github.jhamin0511.android.async.thread.Counter
 
 class HandlerDataThread : Thread("SendData ${Counter.getCount()}") {
     private lateinit var handler: Handler

@@ -1,7 +1,7 @@
 package com.github.jhamin0511.android.async.thread.memory.prevention.staticinner
 
 import android.os.SystemClock
-import com.github.jhamin0511.android.async.thread.memory.Counter
+import com.github.jhamin0511.android.async.thread.Counter
 
 // 외부 객체는 일단 자신을 참조하는 다른 객체가 사라지면 가비지 컬렉션될 수 있다.
 class KOuter {

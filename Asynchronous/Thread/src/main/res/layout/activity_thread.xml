@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/space.layout.large"
+    tools:context=".base.ThreadActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_example_title"
+        style="@style/Example.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="스레드 기초"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_instance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space.widget.medium"
+        android:text="Instance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_example_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintStart_toEndOf="@id/bt_instance"
+        app:layout_constraintTop_toTopOf="@id/bt_instance" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        app:layout_constraintStart_toEndOf="@id/bt_start"
+        app:layout_constraintTop_toTopOf="@id/bt_start" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        app:layout_constraintStart_toEndOf="@id/bt_stop"
+        app:layout_constraintTop_toTopOf="@id/bt_stop" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="STATE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_instance" />
+</androidx.constraintlayout.widget.ConstraintLayout>

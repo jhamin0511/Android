@@ -2,6 +2,7 @@ package com.github.jhamin0511.android.async.thread.memory
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.github.jhamin0511.android.async.thread.Counter
 import com.github.jhamin0511.android.async.thread.databinding.ActivityMemoryBinding
 import java.lang.Thread.sleep
 
