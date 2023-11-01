@@ -1,4 +1,4 @@
-package com.github.jhamin0511.android.async.thread.base
+package com.github.jhamin0511.android.async.thread.basic
 
 import android.os.SystemClock
 import com.github.jhamin0511.android.async.thread.Counter

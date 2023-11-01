@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.github.jhamin0511.android.async.thread.base.ThreadActivity
+import com.github.jhamin0511.android.async.thread.basic.ThreadActivity
 import com.github.jhamin0511.android.async.thread.databinding.ActivityMainBinding
 import com.github.jhamin0511.android.async.thread.memory.MemoryActivity
 import com.github.jhamin0511.android.async.thread.memory.prevention.MemoryPreventionActivity

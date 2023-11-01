@@ -1,4 +1,4 @@
-package com.github.jhamin0511.android.async.thread.base
+package com.github.jhamin0511.android.async.thread.basic
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -59,4 +59,29 @@ class ThreadActivity : AppCompatActivity() {
             thread = null
         }
     }
+
+    /*
+    /**
+     * 설정 변경이 일어나기 전에 플랫폼에서 호출
+     *
+     * 새로운 Activity 객체에 전달하고자 하는 객체를 반환
+     *
+     * ViewModel 사용 권장함
+     * */
+    override fun onRetainCustomNonConfigurationInstance(): Any? {
+        return super.onRetainCustomNonConfigurationInstance()
+    }
+    */
+
+    /*
+    /**
+     * 설정 변경이 이루어진 후에 호출
+     *
+     * onRetainNonConfigurationInstance()에서 반환된 객체를 가져오기 위해
+     *
+     * 새로운 Acitivity 객체에서 호출
+     * */
+    val instance = lastNonConfigurationInstance
+    val customInstance = lastCustomNonConfigurationInstance
+    */
 }
