@@ -51,10 +51,17 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_state"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="STATE"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_instance" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_exception"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exception"
+        app:layout_constraintStart_toEndOf="@id/bt_state"
         app:layout_constraintTop_toBottomOf="@id/bt_instance" />
 </androidx.constraintlayout.widget.ConstraintLayout>

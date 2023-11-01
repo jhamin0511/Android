@@ -1,7 +1,7 @@
 package com.github.jhamin0511.android.async.thread.base
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.github.jhamin0511.android.async.thread.databinding.ActivityThreadBinding
 import timber.log.Timber
 import java.lang.Thread.State
@@ -52,6 +52,11 @@ class ThreadActivity : AppCompatActivity() {
         binding.btState.setOnClickListener {
             Timber.d("Click State")
             Timber.i(thread?.state.toString())
+        }
+        binding.btException.setOnClickListener {
+            Timber.d("Click Exception")
+            thread?.exception()
+            thread = null
         }
     }
 }
