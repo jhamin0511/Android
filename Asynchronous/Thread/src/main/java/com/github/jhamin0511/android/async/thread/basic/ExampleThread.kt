@@ -4,7 +4,7 @@ import android.os.SystemClock
 import com.github.jhamin0511.android.async.thread.Counter
 import timber.log.Timber
 
-class ExampleThread : Thread("ExampleThread ${Counter.getCount()}") {
+class ExampleThread : Thread("Example ${Counter.getCount()}") {
     private var count = 0
     private var isException = false
 

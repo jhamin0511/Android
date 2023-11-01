@@ -1,13 +1,19 @@
 package com.github.jhamin0511.android.async.thread.basic
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import com.github.jhamin0511.android.async.thread.databinding.ActivityThreadBinding
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.lang.Thread.State
 
 class ThreadActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThreadBinding
+    private val viewModel: ThreadStayViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -15,6 +21,21 @@ class ThreadActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initBase()
+        initStay()
+    }
+
+    private fun initStay() {
+        lifecycleScope.launch {
+            viewModel.progress
+                .flowWithLifecycle(lifecycle)
+                .collect {
+                    binding.tvIndicate.text = "${it}%"
+                    binding.pbIndicate.progress = it
+                }
+        }
+        binding.btStartIndicate.setOnClickListener {
+            viewModel.start()
+        }
     }
 
     // 실행 환경을 설정 및 해체는 무거운 작업으로 지양
