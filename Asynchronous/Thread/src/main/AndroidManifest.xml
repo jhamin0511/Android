@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".pipe.PipeActivity" />
         <activity android:name=".memory.MemoryActivity" />
+        <activity android:name=".memory.prevention.MemoryPreventionActivity" />
     </application>
 
 </manifest>
