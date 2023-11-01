@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_run_anonymous_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run Thread"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_run_runnable_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run Anonymous Thread"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@id/bt_run_anonymous_thread"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_run_inner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run Inner Thread"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_run_runnable_thread" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_run_static_inner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run Static Inner Thread"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@id/bt_run_inner"
+        app:layout_constraintTop_toTopOf="@id/bt_run_inner" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_send_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Handler Send Data"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_run_inner" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_post_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Handler Post Task"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toEndOf="@id/bt_send_data"
+        app:layout_constraintTop_toTopOf="@id/bt_send_data" />
+</androidx.constraintlayout.widget.ConstraintLayout>

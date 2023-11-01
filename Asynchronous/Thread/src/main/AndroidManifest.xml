@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".pipe.PipeActivity" />
+        <activity android:name=".memory.MemoryActivity" />
     </application>
 
 </manifest>

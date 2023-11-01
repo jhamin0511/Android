@@ -1,4 +1,4 @@
-package com.github.jhamin0511.android.async.thread;
+package com.github.jhamin0511.android.async.thread.queue;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

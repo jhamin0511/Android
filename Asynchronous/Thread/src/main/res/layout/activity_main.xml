@@ -11,8 +11,17 @@
         android:id="@+id/bt_start_pipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pipe"
+        android:text="Start Pipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_start_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Memory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_start_pipe" />
 </androidx.constraintlayout.widget.ConstraintLayout>
