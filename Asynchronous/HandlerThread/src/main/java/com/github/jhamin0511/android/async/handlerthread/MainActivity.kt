@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.github.jhamin0511.android.async.handlerthread.databinding.ActivityMainBinding
 import com.github.jhamin0511.android.async.handlerthread.repeat.RepeatActivity
+import com.github.jhamin0511.android.async.handlerthread.resource.ResourceActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,9 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
         binding.btStartRepeat.setOnClickListener {
             startActivity<RepeatActivity>()
+        }
+        binding.btStartResource.setOnClickListener {
+            startActivity<ResourceActivity>()
         }
     }
 }

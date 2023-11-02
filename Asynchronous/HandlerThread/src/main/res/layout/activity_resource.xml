@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.github.jhamin0511.android.async.handlerthread.resource.ResourceViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/space.layout.large"
+        tools:context=".resource.ResourceActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClickListener="@{() -> vm.bindClickSendMinus()}"
+            android:text="Send Minus"
+            app:layout_constraintBottom_toBottomOf="@id/tv_result"
+            app:layout_constraintEnd_toStartOf="@+id/tv_result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.result}"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="@id/bt_post_minus"
+            app:layout_constraintEnd_toStartOf="@+id/bt_plus"
+            app:layout_constraintStart_toEndOf="@+id/bt_minus"
+            app:layout_constraintTop_toTopOf="@id/bt_minus"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClickListener="@{() -> vm.bindClickSendPlus()}"
+            android:text="Send Plus"
+            app:layout_constraintBottom_toBottomOf="@id/tv_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_result"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_post_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space.widget.large"
+            android:onClickListener="@{() -> vm.bindClickPostMinus()}"
+            android:text="Post Minus"
+            app:layout_constraintEnd_toEndOf="@id/bt_minus"
+            app:layout_constraintStart_toStartOf="@id/bt_minus"
+            app:layout_constraintTop_toBottomOf="@id/bt_minus" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_post_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space.widget.large"
+            android:onClickListener="@{() -> vm.bindClickPostPlus()}"
+            android:text="Post Plus"
+            app:layout_constraintEnd_toEndOf="@id/bt_plus"
+            app:layout_constraintStart_toStartOf="@id/bt_plus"
+            app:layout_constraintTop_toBottomOf="@id/bt_plus" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
