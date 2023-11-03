@@ -17,6 +17,7 @@ rootProject.name = "Android"
 include(":app")
 include(":core:design")
 include(":Asynchronous:AsyncTask")
+include(":Asynchronous:Executor")
 include(":Asynchronous:Handler")
-include(":Asynchronous:Thread")
 include(":Asynchronous:HandlerThread")
+include(":Asynchronous:Thread")
