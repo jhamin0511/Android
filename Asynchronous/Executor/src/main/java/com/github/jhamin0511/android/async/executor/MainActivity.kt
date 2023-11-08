@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.jhamin0511.android.async.executor.databinding.ActivityMainBinding
 import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
-import java.util.concurrent.atomic.AtomicInteger
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        private const val SLEEP_TIME = 5L
+    }
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +22,42 @@ class MainActivity : AppCompatActivity() {
         initNewFixedThreadPool()
     }
 
-    private val newFixedThreadPoolCounting = AtomicInteger(0)
+    private var count = 0
 
     private fun initNewFixedThreadPool() {
         binding.btExecuteNewFixedThreadPool.setOnClickListener {
             ExecutorSingleton.newFixedThreadPool.execute {
-                val count = newFixedThreadPoolCounting.get() + 1
-                newFixedThreadPoolCounting.set(count)
-                TimeUnit.SECONDS.sleep(5)
-                println("[${Thread.currentThread().name}] Counting : $count")
+                TimeUnit.SECONDS.sleep(SLEEP_TIME)
+                println("[${Thread.currentThread().name}] Counting : ${count++}")
             }
         }
         binding.btSubmitNewFixedThreadPool.setOnClickListener {
             val future = ExecutorSingleton.newFixedThreadPool.submit(
                 Callable {
-                    val count = newFixedThreadPoolCounting.get() + 1
-                    newFixedThreadPoolCounting.set(count)
-                    TimeUnit.SECONDS.sleep(5)
-                    println("${Thread.currentThread().name} Counting : $count")
+                    TimeUnit.SECONDS.sleep(SLEEP_TIME)
+                    println("[${Thread.currentThread().name}] Counting : ${count++}")
                     count
                 }
             )
             val result = future.get()
-            println("${Thread.currentThread().name}[Result] : $result")
+            println("[${Thread.currentThread().name}][Result] : $result")
+        }
+        binding.btExecuteNewCachedThreadPool.setOnClickListener {
+            ExecutorSingleton.newCachedThreadPool.execute {
+                TimeUnit.SECONDS.sleep(SLEEP_TIME)
+                println("[${Thread.currentThread().name}] Counting : ${count++}")
+            }
+        }
+        binding.btSubmitNewCachedThreadPool.setOnClickListener {
+            val future = ExecutorSingleton.newCachedThreadPool.submit(
+                Callable {
+                    TimeUnit.SECONDS.sleep(SLEEP_TIME)
+                    println("[${Thread.currentThread().name}] Counting : ${count++}")
+                    count
+                }
+            )
+            val result = future.get()
+            println("[${Thread.currentThread().name}][Result] : $result")
         }
     }
 }

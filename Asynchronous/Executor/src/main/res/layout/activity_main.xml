@@ -42,4 +42,41 @@
             app:layout_constraintStart_toEndOf="@id/bt_execute_new_fixed_thread_pool"
             app:layout_constraintTop_toTopOf="@id/bt_execute_new_fixed_thread_pool" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_new_cached_thread_pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space.widget.large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_new_fixed_thread_pool">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_new_cached_thread_pool"
+            style="@style/Example.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NewCachedThreadPool"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_execute_new_cached_thread_pool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space.widget.small"
+            android:text="Execute Task"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_new_cached_thread_pool" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_submit_new_cached_thread_pool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Task"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toEndOf="@id/bt_execute_new_cached_thread_pool"
+            app:layout_constraintTop_toTopOf="@id/bt_execute_new_cached_thread_pool" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
