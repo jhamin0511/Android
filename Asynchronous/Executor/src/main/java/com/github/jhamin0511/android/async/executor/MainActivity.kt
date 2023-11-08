@@ -59,5 +59,22 @@ class MainActivity : AppCompatActivity() {
             val result = future.get()
             println("[${Thread.currentThread().name}][Result] : $result")
         }
+        binding.btExecuteNewSingledThreadPool.setOnClickListener {
+            ExecutorSingleton.newSingleThreadPool.execute {
+                TimeUnit.SECONDS.sleep(SLEEP_TIME)
+                println("[${Thread.currentThread().name}] Counting : ${count++}")
+            }
+        }
+        binding.btSubmitNewCachedThreadPool.setOnClickListener {
+            val future = ExecutorSingleton.newSingleThreadPool.submit(
+                Callable {
+                    TimeUnit.SECONDS.sleep(SLEEP_TIME)
+                    println("[${Thread.currentThread().name}] Counting : ${count++}")
+                    count
+                }
+            )
+            val result = future.get()
+            println("[${Thread.currentThread().name}][Result] : $result")
+        }
     }
 }
