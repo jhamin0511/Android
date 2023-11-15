@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HandlerThread</string>
+    <string name="format_percent">%d%%</string>
+</resources>
